@@ -38,7 +38,6 @@ require('lualine').setup {
 
 -- Setup bufferline
 require('bufferline').setup{}
-  
 
 -- Lsp setup
 local lsp = require('lsp-zero').preset({})
@@ -50,7 +49,7 @@ lsp.on_attach(function(client, bufnr)
   end
 end)
 
-lsp.setup() 
+lsp.setup()
 
 -- Setup telescope
 require('telescope').setup {
@@ -58,5 +57,3 @@ require('telescope').setup {
         file_ignore_patterns = { "node_modules" },
     }
 }
-
- 

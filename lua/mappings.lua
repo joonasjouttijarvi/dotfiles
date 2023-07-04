@@ -1,3 +1,4 @@
+local vim = vim
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -64,7 +65,6 @@ vim.keymap.set("n", "<leader>pp", "<cmd>Prettier<CR>")
 
 
 -- LSP
-    
 vim.keymap.set("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("n", "<leader>lh", "<cmd>lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.references()<CR>")
