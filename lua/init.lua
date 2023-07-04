@@ -45,6 +45,18 @@ local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
+  if client.supports_method('textDocument/formatting') then
+      require('lsp-format').on_attach(client)
+  end
 end)
 
-lsp.setup()
+lsp.setup() 
+
+-- Setup telescope
+require('telescope').setup {
+    defaults = {
+        file_ignore_patterns = { "node_modules" },
+    }
+}
+
+ 
