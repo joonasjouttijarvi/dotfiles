@@ -26,6 +26,10 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 
+-- save with W 
+vim.keymap.set("n", "<leader>W", "<cmd>w<CR>")
+
+
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
@@ -82,4 +86,6 @@ vim.keymap.set("n", "<leader>lS", "<cmd>lua vim.lsp.stop_client(vim.lsp.get_acti
 vim.keymap.set("n", "<leader>lW", "<cmd>lua vim.lsp.buf.document_highlight()<CR>")
 vim.keymap.set("n", "<leader>lU", "<cmd>lua vim.lsp.buf.clear_references()<CR>")
 vim.keymap.set("n", "<leader>lF", "<cmd>lua vim.lsp.buf.range_formatting()<CR>")
+--disable warnings 
+vim.keymap.set("n", "<leader>lw", "<cmd>lua vim.lsp.diagnostic.set_signs()<CR>")
 

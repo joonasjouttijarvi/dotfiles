@@ -75,11 +75,18 @@ use {
 -- onedark navarasu
 use 'navarasu/onedark.nvim'
 
+-- bufferline
+
+use {'akinsho/bufferline.nvim',
+tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
+--Undo tree
+use 'mbbill/undotree'
 
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
-    require('packer').sync()
+    require('packer').sync() 
   end
 end)

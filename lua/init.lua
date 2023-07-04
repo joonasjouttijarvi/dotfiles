@@ -36,6 +36,10 @@ require('lualine').setup {
     }
 }
 
+-- Setup bufferline
+require('bufferline').setup{}
+  
+
 -- Lsp setup
 local lsp = require('lsp-zero').preset({})
 
