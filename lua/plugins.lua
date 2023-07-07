@@ -86,6 +86,13 @@ tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 --Undo tree
 use 'mbbill/undotree'
 
+--Prettier
+use 'prettier/vim-prettier'
+
+--Fugitive
+use 'tpope/vim-fugitive'
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

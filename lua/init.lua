@@ -44,10 +44,7 @@ local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
-  if client.supports_method('textDocument/formatting') then
-      require('lsp-format').on_attach(client)
-  end
-end)
+ end)
 
 lsp.setup()
 
