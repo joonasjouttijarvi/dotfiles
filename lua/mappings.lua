@@ -81,4 +81,11 @@ vim.keymap.set ("n", "<leader>lf", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 -- Prettier
 vim.keymap.set("n", "<leader>pe", ":Prettier<CR>")
 
-
+-- Fugitive
+vim.keymap.set("n", "<leader>gs", ":Git<CR>")
+vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
+vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
+vim.keymap.set("n", "<leader>gl", ":Git pull<CR>")
+vim.keymap.set("n", "<leader>gb", ":Git blame<CR>")
+vim.keymap.set("n", "<leader>gca ", ":Git commit -a'<CR>")
+vim.keymap.set("n", "<leader>gaa", ":Git add .<CR>")
