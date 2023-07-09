@@ -93,6 +93,10 @@ use 'prettier/vim-prettier'
 use 'tpope/vim-fugitive'
 
 
+--Gv
+use 'junegunn/gv.vim'
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
