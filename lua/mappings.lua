@@ -41,8 +41,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 --:so with double leader 
 vim.keymap.set("n", "<leader><leader>", "<cmd>:so<CR>")
@@ -77,7 +75,6 @@ vim.keymap.set ("n", "<leader>ls", "<cmd>lua vim.lsp.buf.references()<CR>")
 vim.keymap.set ("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set ("n", "<leader>lf", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 
-
 -- Prettier
 vim.keymap.set("n", "<leader>pe", ":Prettier<CR>")
 
@@ -92,4 +89,9 @@ vim.keymap.set("n", "<leader>gaa", ":Git add .<CR>")
 
 -- gv.vim
 vim.keymap.set("n", "<leader>gv", ":GV<CR>")
+
+
+
+
+
 
