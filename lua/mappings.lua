@@ -51,7 +51,7 @@ vim.keymap.set("n", "<leader><leader>", "<cmd>:so<CR>")
 --Nvimtree
 vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>",{ silent = true })
 --focus nvimtree
-vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>")
+vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>",{ silent = true })
 --refresh nvimtree control + r)
 vim.keymap.set("n", "<leader>r", ":NvimTreeRefresh<CR>")
 
@@ -87,5 +87,8 @@ vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
 vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
 vim.keymap.set("n", "<leader>gl", ":Git pull<CR>")
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>")
-vim.keymap.set("n", "<leader>gca ", ":Git commit -a'<CR>")
+vim.keymap.set("n", "<leader>gca ", ":Git commit -a -m'<CR>")
 vim.keymap.set("n", "<leader>gaa", ":Git add .<CR>")
+
+
+
