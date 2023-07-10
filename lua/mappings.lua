@@ -90,8 +90,3 @@ vim.keymap.set("n", "<leader>gaa", ":Git add .<CR>")
 -- gv.vim
 vim.keymap.set("n", "<leader>gv", ":GV<CR>")
 
-
-
-
-
-
