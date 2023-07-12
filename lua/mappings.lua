@@ -54,7 +54,9 @@ vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>",{ silent = true })
 vim.keymap.set("n", "<leader>r", ":NvimTreeRefresh<CR>")
 
 -- telescope
+
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
+
 vim.keymap.set("n", "<leader>fs", "<cmd>Telescope grep_string<CR>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
@@ -75,9 +77,8 @@ vim.keymap.set ("n", "<leader>ls", "<cmd>lua vim.lsp.buf.references()<CR>")
 vim.keymap.set ("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set ("n", "<leader>lf", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 
--- Prettier
-vim.keymap.set("n", "<leader>pe", ":Prettier<CR>")
-
+-- Vim prettier
+vim.keymap.set("n", "<leader>pp", ":Prettier<CR>")
 -- Fugitive
 vim.keymap.set("n", "<leader>git", ":Git<CR>")
 vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")

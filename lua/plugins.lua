@@ -87,7 +87,8 @@ tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 use 'mbbill/undotree'
 
 --Prettier
-use 'prettier/vim-prettier'
+use 'jose-elias-alvarez/null-ls.nvim'
+use 'MunifTanjim/prettier.nvim'
 
 --Fugitive
 use 'tpope/vim-fugitive'
@@ -95,7 +96,6 @@ use 'tpope/vim-fugitive'
 
 --Gv
 use 'junegunn/gv.vim'
-
 
 
   -- Automatically set up your configuration after cloning packer.nvim
