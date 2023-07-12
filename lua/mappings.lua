@@ -14,10 +14,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -27,7 +27,7 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 
--- save with w 
+-- save with w
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
 
 -- make directory named 'new folder' in current directory
@@ -42,14 +42,14 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 
---:so with double leader 
+--:so with double leader
 vim.keymap.set("n", "<leader><leader>", "<cmd>:so<CR>")
 
 -- ###########  Plugins mappings ########### --
 --Nvimtree
-vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>",{ silent = true })
+vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", { silent = true })
 --focus nvimtree
-vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>",{ silent = true })
+vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>", { silent = true })
 --refresh nvimtree control + r)
 vim.keymap.set("n", "<leader>r", ":NvimTreeRefresh<CR>")
 
@@ -72,10 +72,10 @@ vim.keymap.set("n", "<leader>lsp", ":LspInfo<CR>")
 
 -- lsp
 vim.keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-vim.keymap.set ("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>")
-vim.keymap.set ("n", "<leader>ls", "<cmd>lua vim.lsp.buf.references()<CR>")
-vim.keymap.set ("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>")
-vim.keymap.set ("n", "<leader>lf", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>")
+vim.keymap.set("n", "<leader>ls", "<cmd>lua vim.lsp.buf.references()<CR>")
+vim.keymap.set("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>")
+vim.keymap.set("n", "<leader>li", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 
 -- Vim prettier
 vim.keymap.set("n", "<leader>pp", ":Prettier<CR>")
@@ -91,3 +91,5 @@ vim.keymap.set("n", "<leader>gaa", ":Git add .<CR>")
 -- gv.vim
 vim.keymap.set("n", "<leader>gv", ":GV<CR>")
 
+-- null-ls formatting
+vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>")

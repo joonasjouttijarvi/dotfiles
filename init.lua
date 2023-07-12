@@ -1,9 +1,5 @@
-require ('plugins')
-require ('init')
-require ('mappings')
-require ('set')
-require ('treesitter')
-require ('null-ls')
-
-
-
+require('plugins')
+require('init')
+require('mappings')
+require('set')
+require('treesitter')
