@@ -26,7 +26,6 @@ vim.keymap.set("n", "Q", "<cmd>q<CR>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-
 -- save with w
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
 
@@ -40,7 +39,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
 
 --:so with double leader
 vim.keymap.set("n", "<leader><leader>", "<cmd>:so<CR>")
@@ -65,10 +63,7 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
 vim.keymap.set("n", "<leader>uu", ":UndotreeToggle<CR>")
 -- LSP-zero
 
-
 vim.keymap.set("n", "<leader>lsp", ":LspInfo<CR>")
-
-
 
 -- lsp
 vim.keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>")
@@ -85,7 +80,7 @@ vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
 vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
 vim.keymap.set("n", "<leader>gl", ":Git pull<CR>")
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>")
-vim.keymap.set("n", "<leader>gca ", ":Git commit -a -m'<CR>")
+vim.keymap.set("n", "<leader>gca ", ":Git commit -a'<CR>")
 vim.keymap.set("n", "<leader>gaa", ":Git add .<CR>")
 
 -- gv.vim
