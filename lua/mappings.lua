@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 --:so with double leader
-vim.keymap.set("n", "<leader><leader>", "<cmd>:so<CR>")
+vim.keymap.set("n", "<leader>so", "<cmd>:so<CR>")
 
 -- ###########  Plugins mappings ########### --
 --Nvimtree
@@ -71,20 +71,19 @@ vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>")
 vim.keymap.set("n", "<leader>ls", "<cmd>lua vim.lsp.buf.references()<CR>")
 vim.keymap.set("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("n", "<leader>li", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>")
 
 -- Vim prettier
 vim.keymap.set("n", "<leader>pp", ":Prettier<CR>")
+
 -- Fugitive
 vim.keymap.set("n", "<leader>git", ":Git<CR>")
 vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
 vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
 vim.keymap.set("n", "<leader>gl", ":Git pull<CR>")
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>")
-vim.keymap.set("n", "<leader>gca ", ":Git commit -a'<CR>")
+vim.keymap.set("n", "<leader>gca ", ":Git commit -a'< CR>")
 vim.keymap.set("n", "<leader>gaa", ":Git add .<CR>")
 
 -- gv.vim
 vim.keymap.set("n", "<leader>gv", ":GV<CR>")
-
--- null-ls formatting
-vim.keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>")
