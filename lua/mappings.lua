@@ -88,5 +88,5 @@ vim.keymap.set("n", "<leader>gaa", ":Git add .<CR>")
 -- gv.vim
 vim.keymap.set("n", "<leader>gv", ":GV<CR>")
 
---open terminal window horizontal split
-vim.keymap.set("n", "<leader>th", ":split term://zsh<CR>")
+--open terminal window horizontal split on lower half of screen
+vim.keymap.set("n", "<leader>th", ":belowright split | terminal<CR>")
