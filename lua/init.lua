@@ -45,12 +45,8 @@ end)
 
 -- cmp setup and enter keymap for confirm
 local cmp = require("cmp")
+
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-        end,
-    },
     mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
@@ -63,13 +59,8 @@ cmp.setup({
             select = true,
         }),
     },
-    sources = {
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "path" },
-    },
-    require("luasnip.loaders.from_snipmate").lazy_load(),
+
+    require("luasnip.loaders.from_vscode").lazy_load(),
 })
 
 lsp.setup()
