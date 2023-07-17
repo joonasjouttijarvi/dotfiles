@@ -99,3 +99,8 @@ null_ls.setup({
 })
 --format on save
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+
+-- yank to system clipboard
+vim.cmd([[set clipboard+=unnamedplus]])
+-- flash on yank
+vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
