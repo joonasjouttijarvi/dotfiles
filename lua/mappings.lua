@@ -90,3 +90,7 @@ vim.keymap.set("n", "<leader>gv", ":GV<CR>")
 
 --open terminal window horizontal split on lower half of screen
 vim.keymap.set("n", "<leader>th", ":belowright split | terminal<CR>")
+
+--tpope commentary
+vim.keymap.set("n", "<leader>cl", ":Commentary<CR>")
+-- uncomment line

@@ -98,6 +98,9 @@ return require("packer").startup(function(use)
     --Gv
     use("junegunn/gv.vim")
 
+    --commenting
+    use("tpope/vim-commentary")
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
