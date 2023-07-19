@@ -40,9 +40,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
---:so with double leader
-vim.keymap.set("n", "<leader>so", "<cmd>:so<CR>")
-
 -- ###########  Plugins mappings ########### --
 --Nvimtree
 vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", { silent = true })
@@ -93,4 +90,10 @@ vim.keymap.set("n", "<leader>th", ":belowright split | terminal<CR>")
 
 --tpope commentary
 vim.keymap.set("n", "<leader>cl", ":Commentary<CR>")
--- uncomment line
+-- Set mapping for searching a session.
+-- ⚠️ This will only work if Telescope.nvim is installed
+vim.keymap.set("n", "<leader>ts", require("auto-session.session-lens").search_session, {
+    noremap = true,
+})
+-- change working directory to the directory of the open buffer
+vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>")
