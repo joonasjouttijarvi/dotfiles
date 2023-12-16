@@ -1,0 +1,122 @@
+# disable cmd fuckups !
+cmd - q : 
+
+cmd - w : 
+# Toggle alacritty opacity
+cmd + shift - o : python3 /Users/joonas/Documents/Stuff/scripts/alacritty_opacity.py
+
+cmd + shift - b : open -n -a "Brave Browser"
+#open vscode
+cmd + shift - v : open -n -a "Visual Studio Code"
+
+#open firefox
+cmd + shift - f : open -n -a "Firefox"
+
+# open firefox dev 
+cmd + shift - d : open -n -a "Firefox Developer Edition"
+
+# open ranger in terminal 
+
+cmd + shift - k : /Users/joonas/Documents/Stuff/scripts/ranger.sh
+
+#open alacritty
+cmd + shift - a : open -n -a "Alacritty" 
+# moves focus between windows in the current focused display
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# delete focused space
+alt - q : yabai -m space --destroy
+
+# toggle window split type
+alt - s : yabai -m window --toggle split
+
+# close window
+alt - x : yabai -m window --close
+
+
+# rotate tree
+alt - r : yabai -m space --rotate 90
+
+# mirror tree y-axis
+alt - y : yabai -m space --mirror y-axis
+
+# toggle desktop offset
+alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
+
+# toggle window parent zoom
+alt - d : yabai -m window --focus mouse && \
+          yabai -m window --toggle zoom-parent
+
+# float / unfloat window and center on screen
+alt - m : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:1:2:2
+
+# toggle window fullscreen zoom
+alt - f : yabai -m window --focus mouse && \
+          yabai -m window --toggle zoom-fullscreen
+
+# toggle window native fullscreen
+shift + alt - f : yabai -m window --toggle native-fullscreen
+
+# increase gap in focused space
+alt - g : yabai -m space --gap rel:10
+
+# decrease gap in focused space
+shift + alt - g : yabai -m space --gap rel:-10
+
+# create a new space and follow focus
+alt - n : yabai -m space --create && \
+                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+                  yabai -m space --focus "${index}"
+
+# create a new space, move window and follow focus
+shift + alt - n : yabai -m space --create && \
+                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+                  yabai -m window --space "${index}" && \
+                  yabai -m space --focus "${index}"
+
+# balance size of windows
+shift + alt - o : yabai -m space --balance
+
+# swap window
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+
+# change layout of desktop
+ctrl + alt - a : yabai -m space --layout bsp
+ctrl + alt - d : yabai -m space --layout float
+
+# increase window size
+ctrl + alt - h : yabai -m window --resize left:-40:0
+ctrl + alt - j : yabai -m window --resize bottom:0:40
+ctrl + alt - k : yabai -m window --resize top:0:-40
+ctrl + alt - l : yabai -m window --resize right:40:0
+
+# decrease window size
+ctrl + alt + cmd - h : yabai -m window --resize left:40:0
+ctrl + alt + cmd - j : yabai -m window --resize bottom:0:-40
+ctrl + alt + cmd - k : yabai -m window --resize top:0:40
+ctrl + alt + cmd - l : yabai -m window --resize right:-40:0
+ctrl + alt + cmd - f : yabai -m window --resize center:0:0
+
+# move window to next display
+# (if there is only one display, it will move to the next space)
+# (if there are multiple displays, it will move to the next display)
+# (if there are no more displays, it will move to the first display)
+shift + alt - left : yabai -m window --warp next
+
+#make floating window fill left half of screen
+shift + cmd -left : yabai -m window --grid 4:4:0:0:2:4
+
+#make floating window fill right half of screen
+shift + cmd - right : yabai -m window --grid 4:4:2:0:2:4
+
+
+#make focused window float 
+shift + cmd - n : yabai -m window --toggle float
