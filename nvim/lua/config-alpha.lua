@@ -5,7 +5,7 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 
-function dayLeft()
+function DayLeft()
 	local now = os.date("*t")
 	local totalSeconds = 24 * 60 * 60
 	local secondsPassed = now.hour * 60 * 60 + now.min * 60 + now.sec
@@ -18,7 +18,7 @@ function monthLeft()
 	local monthLeftPercentage = (totalDaysInMonth - now.day) / totalDaysInMonth * 100
 	return monthLeftPercentage
 end
-function yearLeft()
+function YearLeft()
 	local now = os.date("*t")
 	local yearStart = os.time({ year = now.year, month = 1, day = 1 })
 	local yearEnd = os.time({ year = now.year + 1, month = 1, day = 1 })
@@ -27,7 +27,7 @@ function yearLeft()
 	local yearLeftPercentage = (totalSecondsInYear - secondsPassedThisYear) / totalSecondsInYear * 100
 	return yearLeftPercentage
 end
-function lifeLeft()
+function LifeLeft()
 	local birthYear = 1994
 	local currentYear = os.date("*t").year
 	local age = currentYear - birthYear
@@ -36,10 +36,10 @@ function lifeLeft()
 end
 
 dashboard.section.header.val = {
-	"DAY Left " .. string.format("%.2f", dayLeft()) .. "%",
+	"DAY Left " .. string.format("%.2f", DayLeft()) .. "%",
 	"MONTH Left " .. string.format("%.2f", monthLeft()) .. "%",
-	"YEAR Left " .. string.format("%.2f", yearLeft()) .. "%",
-	"LIFE Left " .. string.format("%.2f", lifeLeft()) .. "%",
+	"YEAR Left " .. string.format("%.2f", YearLeft()) .. "%",
+	"LIFE Left " .. string.format("%.2f", LifeLeft()) .. "%",
 }
 
 dashboard.section.header.opts.hl = "AlphaHeader"
