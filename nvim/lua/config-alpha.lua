@@ -12,7 +12,7 @@ function DayLeft()
 	local dayLeftPercentage = (totalSeconds - secondsPassed) / totalSeconds * 100
 	return dayLeftPercentage
 end
-function monthLeft()
+function MonthLeft()
 	local now = os.date("*t")
 	local totalDaysInMonth = os.date("*t", os.time({ year = now.year, month = now.month + 1, day = 0 })).day
 	local monthLeftPercentage = (totalDaysInMonth - now.day) / totalDaysInMonth * 100
@@ -37,7 +37,7 @@ end
 
 dashboard.section.header.val = {
 	"DAY Left " .. string.format("%.2f", DayLeft()) .. "%",
-	"MONTH Left " .. string.format("%.2f", monthLeft()) .. "%",
+	"MONTH Left " .. string.format("%.2f", MonthLeft()) .. "%",
 	"YEAR Left " .. string.format("%.2f", YearLeft()) .. "%",
 	"LIFE Left " .. string.format("%.2f", LifeLeft()) .. "%",
 }

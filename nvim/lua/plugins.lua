@@ -45,12 +45,10 @@ require("lazy").setup({
 	{ "hrsh7th/cmp-nvim-lua" },
 	{ "hrsh7th/vim-vsnip" },
 	{ "saadparwaiz1/cmp_luasnip" },
-	-- Snippets
-	{
-		"L3MON4D3/LuaSnip",
-		build = "make install_jsregexp",
-		dependencies = "rafamadriz/friendly-snippets",
-	},
+	{ "L3MON4D3/LuaSnip" },
+	{ "rafamadriz/friendly-snippets" },
+	{ "hrsh7th/cmp-cmdline" },
+	{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 
 	-- Zenmode
 	{ "folke/zen-mode.nvim" },

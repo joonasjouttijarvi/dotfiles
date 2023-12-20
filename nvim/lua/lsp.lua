@@ -1,16 +1,19 @@
 local nvim_lsp = require("lspconfig")
 
 -- lsp icons
-
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
 vim.diagnostic.config({
 	virtual_text = {
 		prefix = "■",
+		spacing = 4,
 	},
+	underline = true,
+	signs = true,
 	severity_sort = true,
 	float = {
 		source = "if_many",
@@ -30,6 +33,7 @@ function ToggleInlayHints()
 		vim.lsp.inlay_hint.enable(0, false)
 	end
 end
+
 vim.api.nvim_set_keymap("n", "<leader>ih", ":lua ToggleInlayHints()<CR>", { noremap = true, silent = true })
 
 require("mason").setup()
@@ -77,7 +81,7 @@ require("typescript-tools").setup({
 			includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
 			includeInlayParameterNameHintsWhenArgumentMatchesName = true,
 			includeInlayPropertyDeclarationTypeHints = true,
-			includeInlayVariableTypeHints = false,
+			includeInlayVariableTypeHints = true,
 			quotePreference = "auto",
 		},
 		-- locale of all tsserver messages, supported locales you can find here:
@@ -89,10 +93,10 @@ require("typescript-tools").setup({
 		-- CodeLens
 		-- WARNING: Experimental feature also in VSCode, because it might hit performance of server.
 		-- possible values: ("off"|"all"|"implementations_only"|"references_only")
-		code_lens = "off",
+		code_lens = "all",
 		-- by default code lenses are displayed on all referencable values and for some of you it can
 		-- be too much this option reduce count of them by removing member references from lenses
-		disable_member_code_lens = true,
+		disable_member_code_lens = false,
 	},
 })
 

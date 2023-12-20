@@ -4,7 +4,6 @@ require("mappings")
 require("set")
 require("treesitter")
 require("config-alpha") -- alpha startup screen
-require("cmp").setup()
 require("lsp")
 require("conform-config").setup()
 require("neotree-config").setup()

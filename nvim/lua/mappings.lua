@@ -1,8 +1,8 @@
 --close :x
 vim.keymap.set("n", "X", "<cmd>q<CR>")
 -- add to jump list
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
+vim.keymap.set("n", "k", "v:count > 1 ? 'gk' : 'k'", { expr = true })
+vim.keymap.set("n", "j", "v:count > 1 ? 'gj' : 'j'", { expr = true })
 -- open window on right side of screen sl
 vim.keymap.set("n", "<leader>sl", "<C-w>v")
 -- save with w

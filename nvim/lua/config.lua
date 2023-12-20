@@ -106,12 +106,17 @@ local function setup_cmp()
 			{ name = "path" },
 			{ name = "buffer" },
 			{ name = "cmp_luasnip" },
+			{ name = "cmdline" },
+			{ name = "git" },
+			{ name = "nvim_lsp_signature_help" },
+			{ name = "copilot" },
 		}),
 
 		formatting = {
 			fields = { "abbr", "kind" },
-			format = function(_, vim_item)
-				vim_item.kind = cmp_kinds[vim_item.kind] or ""
+			format = function(entry, vim_item)
+				vim_item.kind = cmp_kinds[vim_item.kind]
+				vim_item.abbr = vim_item.abbr:sub(1, 20)
 				return vim_item
 			end,
 		},
