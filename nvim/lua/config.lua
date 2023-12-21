@@ -91,13 +91,22 @@ local function setup_cmp()
 		--cmp window styles
 		window = {
 			completion = cmp.config.window.bordered({
+				winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+				col_offset = 1,
+				row_offset = 0,
+				max_height = 10,
+				max_width = 20,
 				border = "none",
+				side_padding = 0,
+				scrollbar = false,
 			}),
 			documentation = cmp.config.window.bordered({
 				border = "none",
+				side_padding = 0,
+				max_width = 20,
+				max_height = 10,
 			}),
 		},
-
 		mapping = cmp_mappings,
 		sources = cmp.config.sources({
 			{ name = "nvim_lsp" },
@@ -106,7 +115,6 @@ local function setup_cmp()
 			{ name = "path" },
 			{ name = "buffer" },
 			{ name = "cmp_luasnip" },
-			{ name = "cmdline" },
 			{ name = "git" },
 			{ name = "nvim_lsp_signature_help" },
 			{ name = "copilot" },
@@ -114,8 +122,9 @@ local function setup_cmp()
 
 		formatting = {
 			fields = { "abbr", "kind" },
-			format = function(entry, vim_item)
-				vim_item.kind = cmp_kinds[vim_item.kind]
+			format = function(_, vim_item)
+				-- Apply custom kind icons
+				vim_item.kind = cmp_kinds[vim_item.kind] or vim_item.kind
 				vim_item.abbr = vim_item.abbr:sub(1, 20)
 				return vim_item
 			end,
@@ -123,6 +132,8 @@ local function setup_cmp()
 	})
 end
 
+--- set popupheight pumheight
+vim.o.pumheight = 10
 setup_cmp()
 
 vim.cmd([[

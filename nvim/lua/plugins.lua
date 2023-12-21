@@ -249,4 +249,7 @@ require("lazy").setup({
 			require("lsp-file-operations").setup()
 		end,
 	},
+
+	-- clangd extensions
+	{ "p00f/clangd_extensions.nvim" },
 })

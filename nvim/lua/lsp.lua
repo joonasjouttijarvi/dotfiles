@@ -46,11 +46,15 @@ require("mason-lspconfig").setup({
 		"lua_ls",
 		"jsonls",
 		"eslint",
+		"clangd",
+		"yamlls",
 	},
 	automatic_installation = true,
 })
 
 -- Lsp server setups
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require("typescript-tools").setup({
 	settings = {
@@ -105,8 +109,10 @@ nvim_lsp.jdtls.setup({})
 nvim_lsp.pyright.setup({})
 
 nvim_lsp.eslint.setup({})
+nvim_lsp.yamlls.setup({})
 
 nvim_lsp.robotframework_ls.setup({
+
 	cmd = { "robotframework_ls" },
 	filetypes = { "robot" },
 	settings = {
@@ -140,3 +146,6 @@ nvim_lsp.lua_ls.setup({
 		},
 	},
 })
+
+--clangd setup
+nvim_lsp.clangd.setup({})

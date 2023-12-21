@@ -8,16 +8,15 @@ function M.setup()
 			python = { "isort", "autoflake", "black" },
 			javascript = { "prettier" },
 			java = { "google-java-format" },
-			c = { "clang-format" },
-			cpp = { "clang-format" },
 			cs = { "dotnet-format" },
 			html = { "prettier" },
 			css = { "prettier" },
 			scss = { "prettier" },
 			json = { "prettier" },
-			yaml = { "prettier" },
+			yaml = { "yamlfmt" },
 			markdown = { "prettier" },
 			groovy = { "prettier" },
+			cpp = { "clang-format" },
 		},
 	})
 end
