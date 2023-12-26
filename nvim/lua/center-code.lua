@@ -1,5 +1,5 @@
 -- Function to toggle padding
-function toggle_padding()
+function Toggle_padding()
 	if vim.wo.foldcolumn == "0" then
 		-- Set padding when foldcolumn is not set
 		vim.wo.foldcolumn = "9"
@@ -12,4 +12,4 @@ function toggle_padding()
 end
 
 -- Keymap to toggle the padding
-vim.api.nvim_set_keymap("n", "<leader>cm", ":lua toggle_padding()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cm", ":lua Toggle_padding()<CR>", { noremap = true, silent = true })
