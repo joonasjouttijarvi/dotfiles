@@ -157,3 +157,6 @@ nvim_lsp.lua_ls.setup({
 
 --clangd setup
 nvim_lsp.clangd.setup({})
+
+-- -gopls setup
+nvim_lsp.gopls.setup({})
