@@ -1,63 +1,63 @@
-lor:
-    cursor: "#8fee96"
-    text: "#8fee96"
 colors:
-    bright:
-        black: "0x414868"
-        blue: "0x7aa2f7"
-        cyan: "0x7dcfff"
-        green: "0x9ece6a"
-        magenta: "0xbb9af7"
-        red: "0xf7768e"
-        white: "0xc0caf5"
-        yellow: "0xe0af68"
-    indexed_colors:
-        - color: "0xff9e64"
-          index: 16
-        - color: "0xdb4b4b"
-          index: 17
-    normal:
-        black: "0x1d202f"
-        blue: "0x7aa2f7"
-        cyan: "0x7dcfff"
-        green: "0x9ece6a"
-        magenta: "0xbb9af7"
-        red: "0xf7768e"
-        white: "0xa9b1d6"
-        yellow: "0xe0af68"
-    primary:
-        background: "#1a1b26"
-        foreground: "0xc0caf5"
+  bright:
+    black: '0x414868'
+    blue: '0x7aa2f7'
+    cyan: '0x7dcfff'
+    green: '0x9ece6a'
+    magenta: '0xbb9af7'
+    red: '0xf7768e'
+    white: '0xc0caf5'
+    yellow: '0xe0af68'
+  indexed_colors:
+  - color: '0xff9e64'
+    index: 16
+  - color: '0xdb4b4b'
+    index: 17
+  normal:
+    black: '0x1d202f'
+    blue: '0x7aa2f7'
+    cyan: '0x7dcfff'
+    green: '0x9ece6a'
+    magenta: '0xbb9af7'
+    red: '0xf7768e'
+    white: '0xa9b1d6'
+    yellow: '0xe0af68'
+  primary:
+    background: '#1a1b26'
+    foreground: '0xc0caf5'
 font:
-    italic:
-        family: JetBrainsMono NF
-    normal:
-        family: JetBrainsMono Nerd Font Mono
-    size: 12
+  italic:
+    family: JetBrainsMono NF
+  normal:
+    family: JetBrainsMono Nerd Font Mono
+  size: 12
 key_bindings:
-    - action: Copy
-      key: C
-      mods: Command
+- action: Copy
+  key: C
+  mods: Command
+lor:
+  cursor: '#8fee96'
+  text: '#8fee96'
 macos:
-    option_as_alt: false
-    titlebar: false
-    use_ime: true
+  option_as_alt: false
+  titlebar: false
+  use_ime: true
 mouse:
-    hints:
-        launcher:
-            args:
-                - -a
-                - Firefox Developer Edition
-            program: open
+  hints:
+    launcher:
+      args:
+      - -a
+      - Firefox Developer Edition
+      program: open
 scrolling:
-    history: 2000
+  history: 2000
 window:
-    decorations: transparent
-    dimensions:
-        columns: 80
-        lines: 24
-    opacity: 1
-    padding:
-        x: 1
-        y: 35
-    startup_mode: Windowed
+  decorations: transparent
+  dimensions:
+    columns: 80
+    lines: 24
+  opacity: 1
+  padding:
+    x: 1
+    y: 35
+  startup_mode: Windowed

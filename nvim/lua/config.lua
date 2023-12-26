@@ -52,34 +52,7 @@ vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { bg = "NONE", fg = "#D4D4D4" })
 vim.api.nvim_set_hl(0, "CmpItemKindProperty", { link = "CmpItemKindKeyword" })
 vim.api.nvim_set_hl(0, "CmpItemKindUnit", { link = "CmpItemKindKeyword" })
 
-local cmp_kinds = {
-	Text = "  ",
-	Method = "  ",
-	Function = "  ",
-	Constructor = "  ",
-	Field = "  ",
-	Variable = "  ",
-	Class = "  ",
-	Interface = "  ",
-	Module = "  ",
-	Property = "  ",
-	Unit = "  ",
-	Value = "  ",
-	Enum = "  ",
-	Keyword = "  ",
-	Snippet = "  ",
-	Color = "  ",
-	File = "  ",
-	Reference = "  ",
-	Folder = "  ",
-	EnumMember = "  ",
-	Constant = "  ",
-	Struct = "  ",
-	Event = "  ",
-	Operator = "  ",
-	TypeParameter = "  ",
-	Copilot = "",
-}
+local lspkind = require("lspkind")
 
 local function setup_cmp()
 	cmp.setup({
@@ -122,10 +95,8 @@ local function setup_cmp()
 
 		formatting = {
 			fields = { "abbr", "kind" },
-			format = function(_, vim_item)
-				-- Apply custom kind icons
-				vim_item.kind = cmp_kinds[vim_item.kind] or vim_item.kind
-				vim_item.abbr = vim_item.abbr:sub(1, 20)
+			format = lspkind.cmp_format({ with_text = false, maxwidth = 25 }),
+			before = function(entry, vim_item)
 				return vim_item
 			end,
 		},
@@ -328,7 +299,6 @@ vim.api.nvim_create_autocmd({
 	"BufWinEnter",
 	"CursorHold",
 	"InsertLeave",
-
 	-- include this if you have set `show_modified` to `true`
 	"BufModifiedSet",
 }, {
@@ -338,26 +308,7 @@ vim.api.nvim_create_autocmd({
 	end,
 })
 -- colorizer setup
-require("colorizer").setup({
-	-- disable colorizer for certain filetypes
-	disable = {
-		"markdown",
-		"gitcommit",
-		"gitrebase",
-		"go",
-		"json",
-		"yaml",
-		"toml",
-		"vimwiki",
-		"telescope",
-		"packer",
-		"alpha",
-		"nvimtree",
-		"undotree",
-		"dashboard",
-		"flutterToolsOutline",
-	},
-})
+require("colorizer").setup({})
 
 --autopairs setup
 require("nvim-autopairs").setup({

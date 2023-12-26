@@ -1,24 +1,26 @@
 local nvim_lsp = require("lspconfig")
 
--- lsp icons
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
-
 vim.diagnostic.config({
-	virtual_text = {
-		prefix = "■",
-		spacing = 4,
-	},
-	underline = true,
-	signs = true,
-	severity_sort = true,
-	float = {
-		source = "if_many",
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "", --  or another preferred icon for error
+			[vim.diagnostic.severity.WARN] = "", --  or another preferred icon for warning
+			[vim.diagnostic.severity.INFO] = "", --  or another preferred icon for info
+			[vim.diagnostic.severity.HINT] = "➤", --  or another preferred icon for hint
+		},
 	},
 })
+
+-- set lsp icons for diagnostics
+local diagnostic_signs = {
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
+	{ name = "DiagnosticSignHint", text = "➤" },
+	{ name = "DiagnosticSignInfo", text = "" },
+}
+for _, sign in ipairs(diagnostic_signs) do
+	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
+end
 
 -- function for toggling inlay hints
 local inlay_hints_enabled = false
@@ -103,14 +105,20 @@ require("typescript-tools").setup({
 		disable_member_code_lens = false,
 	},
 })
+nvim_lsp.jdtls.setup({
+	capabilities = capabilities,
+})
 
-nvim_lsp.jdtls.setup({})
+nvim_lsp.pyright.setup({
+	capabilities = capabilities,
+})
 
-nvim_lsp.pyright.setup({})
-
-nvim_lsp.eslint.setup({})
-nvim_lsp.yamlls.setup({})
-
+nvim_lsp.eslint.setup({
+	capabilities = capabilities,
+})
+nvim_lsp.yamlls.setup({
+	capabilities = capabilities,
+})
 nvim_lsp.robotframework_ls.setup({
 
 	cmd = { "robotframework_ls" },

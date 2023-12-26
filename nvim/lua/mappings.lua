@@ -65,6 +65,7 @@ vim.keymap.set("n", "<leader>git", ":Git<CR>")
 vim.keymap.set("n", "<leader>gl", ":Git pull<CR>")
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>")
 vim.keymap.set("n", "<leader>gaa", ":Git add .<CR>")
+vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>")
 
 --open terminal window horizontal split on lower half of screen and toggle terminal window
 vim.keymap.set("n", "<leader>th", ":belowright split | resize 15 | terminal<CR>", { silent = true })
@@ -121,3 +122,7 @@ vim.api.nvim_set_keymap("n", "<Leader>rc", ':lua require"coderunner".run_code()<
 
 -- Zen mode mappings
 vim.keymap.set("n", "<leader>zm", ":ZenMode<CR>", { silent = true })
+
+-- markdown preview
+
+vim.keymap.set("n", "<leader>mdp", ":MarkdownPreview<CR>", { silent = true })
