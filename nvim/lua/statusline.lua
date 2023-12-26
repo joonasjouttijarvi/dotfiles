@@ -6,14 +6,13 @@ function My_statusline()
 		branch = "  " .. branch
 	end
 
-	-- Calculate the percentage
+	-- Line status current_line/total_lines
 	local total_lines = fn.line("$")
 	local current_line = fn.line(".")
-	local percent = (current_line / total_lines) * 100
-	local line_percentage = string.format("  %3d%%%% ", percent) -- Added spaces for distance
+	local line_status = current_line .. " | " .. total_lines
 
 	-- Return the statusline string
-	return branch .. " %f%m%=" .. line_percentage .. " %l:%c"
+	return branch .. " %f%m%=" .. line_status .. " %l:%c"
 end
 
 cmd([[ set statusline=%!luaeval('My_statusline()') ]])

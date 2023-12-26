@@ -3,10 +3,10 @@ local nvim_lsp = require("lspconfig")
 vim.diagnostic.config({
 	signs = {
 		text = {
-			[vim.diagnostic.severity.ERROR] = "", --  or another preferred icon for error
-			[vim.diagnostic.severity.WARN] = "", --  or another preferred icon for warning
-			[vim.diagnostic.severity.INFO] = "", --  or another preferred icon for info
-			[vim.diagnostic.severity.HINT] = "➤", --  or another preferred icon for hint
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "➤",
 		},
 	},
 })
