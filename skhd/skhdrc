@@ -15,6 +15,10 @@ cmd + shift - f : open -n -a "Firefox"
 # open firefox dev 
 cmd + shift - d : open -n -a "Firefox Developer Edition"
 
+# open chrome 
+
+cmd + shift - c : open -n -a "Google Chrome"
+
 # open ranger in terminal 
 
 cmd + shift - k : /Users/joonas/Documents/Stuff/scripts/ranger.sh

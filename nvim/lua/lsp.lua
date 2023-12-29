@@ -160,3 +160,9 @@ nvim_lsp.clangd.setup({})
 
 -- -gopls setup
 nvim_lsp.gopls.setup({})
+
+-- -jsonls setup
+
+nvim_lsp.jsonls.setup({
+	capabilities = capabilities,
+})

@@ -251,4 +251,7 @@ require("lazy").setup({
 
 	-- clangd extensions
 	{ "p00f/clangd_extensions.nvim" },
+
+	-- none ls
+	{ "nvimtools/none-ls.nvim" },
 })

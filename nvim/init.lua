@@ -5,7 +5,7 @@ require("set")
 require("treesitter")
 require("config-alpha") -- alpha startup screen
 require("lsp")
-require("conform-config").setup()
 require("neotree-config").setup()
 require("center-code")
 require("statusline")
+require("nonels-config")

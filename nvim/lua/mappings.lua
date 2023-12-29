@@ -86,9 +86,6 @@ vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = 
 
 vim.keymap.set("n", "<leader>yh", "<cmd>Telescope neoclip<CR>", { silent = true })
 
--- conform format conform.format()
-
-vim.keymap.set("n", "<leader>cf", "<cmd>lua require('conform').format()<CR>", { silent = true })
 
 -- Harpoon mappings
 
@@ -125,4 +122,4 @@ vim.keymap.set("n", "<leader>zm", ":ZenMode<CR>", { silent = true })
 
 -- markdown preview
 
-vim.keymap.set("n", "<leader>mdp", ":MarkdownPreview<CR>", { silent = true })
+vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { silent = true })
