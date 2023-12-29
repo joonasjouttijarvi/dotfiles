@@ -11,5 +11,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.autoflake,
+        null_ls.builtins.formatting.google_java_format,
+        null_ls.builtins.diagnostics.gitlint,
 	},
 })
