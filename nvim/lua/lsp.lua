@@ -166,3 +166,8 @@ nvim_lsp.gopls.setup({})
 nvim_lsp.jsonls.setup({
 	capabilities = capabilities,
 })
+
+-- marksman setup
+nvim_lsp.marksman.setup({
+	capabilities = capabilities,
+})

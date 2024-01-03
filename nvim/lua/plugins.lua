@@ -206,12 +206,6 @@ require("lazy").setup({
 
 	{ "tpope/vim-surround" },
 
-	-- conform
-	{
-		"stevearc/conform.nvim",
-		opts = {},
-	},
-
 	-- diffview
 
 	{
