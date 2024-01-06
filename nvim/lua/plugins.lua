@@ -143,7 +143,6 @@ require("lazy").setup({
 			},
 		},
 	},
-	{ "simrat39/rust-tools.nvim" },
 	{
 		"rmagatti/auto-session",
 		config = function()
@@ -227,12 +226,6 @@ require("lazy").setup({
 	{ "joonasjouttijarvi/nvim-coderunner" },
 
 	{
-		"pmizio/typescript-tools.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
-	},
-
-	{
 		"antosha417/nvim-lsp-file-operations",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -248,4 +241,9 @@ require("lazy").setup({
 
 	-- none ls
 	{ "nvimtools/none-ls.nvim" },
+
+	-- 3rd
+	{ "3rd/image.nvim" },
 })
+
+

@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- select all text ggVG
-vim.keymap.set("n", "<C-a>", "ggVG", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>aa", "ggVG", { silent = true, noremap = true })
 
 -- remap for change all instances of word under cursor
 
@@ -85,7 +85,6 @@ vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = 
 -- Neoclip
 
 vim.keymap.set("n", "<leader>yh", "<cmd>Telescope neoclip<CR>", { silent = true })
-
 
 -- Harpoon mappings
 

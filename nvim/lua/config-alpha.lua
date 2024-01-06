@@ -12,12 +12,14 @@ function DayLeft()
 	local dayLeftPercentage = (totalSeconds - secondsPassed) / totalSeconds * 100
 	return dayLeftPercentage
 end
+
 function MonthLeft()
 	local now = os.date("*t")
 	local totalDaysInMonth = os.date("*t", os.time({ year = now.year, month = now.month + 1, day = 0 })).day
 	local monthLeftPercentage = (totalDaysInMonth - now.day) / totalDaysInMonth * 100
 	return monthLeftPercentage
 end
+
 function YearLeft()
 	local now = os.date("*t")
 	local yearStart = os.time({ year = now.year, month = 1, day = 1 })
@@ -27,6 +29,7 @@ function YearLeft()
 	local yearLeftPercentage = (totalSecondsInYear - secondsPassedThisYear) / totalSecondsInYear * 100
 	return yearLeftPercentage
 end
+
 function LifeLeft()
 	local birthYear = 1994
 	local currentYear = os.date("*t").year
@@ -45,14 +48,14 @@ dashboard.section.header.val = {
 dashboard.section.header.opts.hl = "AlphaHeader"
 
 dashboard.section.buttons.val = {
-	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-	dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
-	dashboard.button("p", "  Find text", ":Telescope live_grep <CR>"),
-	dashboard.button("b", "  Bookmarks", ":Telescope marks <CR>"),
-	dashboard.button("c", "  Config", ":e ~/.config/nvim <CR>"),
-	dashboard.button("s", "  Session", ":Telescope session-lens search_session<CR>"),
-	dashboard.button("q", "  Quit", ":qa <CR>"),
+	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+	dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
+	dashboard.button("p", "  Find text", ":Telescope live_grep <CR>"),
+	dashboard.button("b", "  Bookmarks", ":Telescope marks <CR>"),
+	dashboard.button("c", "  Config", ":e ~/.config/nvim <CR>"),
+	dashboard.button("s", "  Session", ":Telescope session-lens search_session<CR>"),
+	dashboard.button("q", "  Quit", ":qa <CR>"),
 }
 
 dashboard.opts.opts.noautocmd = true

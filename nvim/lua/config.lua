@@ -157,8 +157,8 @@ require("telescope").load_extension("session-lens")
 require("telescope").load_extension("refactoring")
 require("telescope").load_extension("fzf")
 
---format on save format.buf
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+-- format on save format.buf
+-- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
 -- yank to system clipboard
 vim.cmd([[set clipboard+=unnamedplus]])
@@ -231,11 +231,6 @@ end
 -- dapui setup
 require("dapui").setup()
 
--- Setup rust-tools
-
-local rt = require("rust-tools")
-
-rt.setup({})
 -- neoclip setup
 require("neoclip").setup()
 

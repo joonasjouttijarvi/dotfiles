@@ -1,8 +1,9 @@
 # disable cmd fuckups !
 cmd - q : 
 
-cmd - w : 
-# Toggle alacritty opacity
+cmd + alt - w : osascript -e 'tell application "System Events" to keystroke "q" using {command down}'
+
+#  Toggle alacritty opacity
 cmd + shift - o : python3 /Users/joonas/Documents/Stuff/scripts/alacritty_opacity.py
 
 cmd + shift - b : open -n -a "Brave Browser"
@@ -71,16 +72,13 @@ alt - g : yabai -m space --gap rel:10
 # decrease gap in focused space
 shift + alt - g : yabai -m space --gap rel:-10
 
-# create a new space and follow focus
-alt - n : yabai -m space --create && \
-                  index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
-                  yabai -m space --focus "${index}"
-
-# create a new space, move window and follow focus
+# create a new space macOS
 shift + alt - n : yabai -m space --create && \
                   index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
                   yabai -m window --space "${index}" && \
                   yabai -m space --focus "${index}"
+
+
 
 # balance size of windows
 shift + alt - o : yabai -m space --balance
