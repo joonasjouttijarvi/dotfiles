@@ -6,12 +6,27 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 require("catppuccin").setup({
-	flavour = "mocha",
+	flavour = "frappe",
 	transparent_background = true,
 	term_colors = true,
+	integrations = {
+		cmp = true,
+		treesitter = true,
+		telescope = {
+			enabled = true,
+		},
+	},
 })
 
 vim.cmd("colorscheme catppuccin")
+
+-- setup one dark theme
+
+-- require('onedark').setup {
+--     style = 'darker',
+--     transparent = true,
+-- }
+-- require('onedark').load()
 
 -- Lsp setup
 
@@ -33,6 +48,7 @@ cmp_mappings["<Tab>"] = nil
 cmp_mappings["<S-Tab>"] = nil
 require("luasnip.loaders.from_vscode").lazy_load()
 
+
 -- cmp colorscheme with nice palette from tokyonight
 -- gray
 
@@ -51,6 +67,9 @@ vim.api.nvim_set_hl(0, "CmpItemKindMethod", { link = "CmpItemKindFunction" })
 vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { bg = "NONE", fg = "#D4D4D4" })
 vim.api.nvim_set_hl(0, "CmpItemKindProperty", { link = "CmpItemKindKeyword" })
 vim.api.nvim_set_hl(0, "CmpItemKindUnit", { link = "CmpItemKindKeyword" })
+vim.api.nvim_set_hl(0, "CmpItemAbbr", { bg = "NONE", fg = "#D4D4D4" })
+-- pmenu colorscheme
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#14151c", fg = "NONE" })
 
 local lspkind = require("lspkind")
 
@@ -61,18 +80,22 @@ local function setup_cmp()
 				require("luasnip").lsp_expand(args.body)
 			end,
 		},
+
 		--cmp window styles
+
 		window = {
 			completion = cmp.config.window.bordered({
-				winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
 				col_offset = 1,
 				row_offset = 0,
 				max_height = 10,
 				max_width = 20,
 				border = "none",
-				side_padding = 0,
+				winhighlight = "NormalFloat:NormalFloat,FloatBorder:NormalFloat",
+				drop_shadow = false,
+				side_padding = 1,
 				scrollbar = false,
 			}),
+
 			documentation = cmp.config.window.bordered({
 				border = "none",
 				side_padding = 0,
@@ -84,13 +107,9 @@ local function setup_cmp()
 		sources = cmp.config.sources({
 			{ name = "nvim_lsp" },
 			{ name = "luasnip" },
+      { name = "nvim_lua" },
 		}, {
 			{ name = "path" },
-			{ name = "buffer" },
-			{ name = "cmp_luasnip" },
-			{ name = "git" },
-			{ name = "nvim_lsp_signature_help" },
-			{ name = "copilot" },
 		}),
 
 		formatting = {
@@ -104,7 +123,7 @@ local function setup_cmp()
 end
 
 --- set popupheight pumheight
-vim.o.pumheight = 10
+vim.o.pumheight = 12
 setup_cmp()
 
 vim.cmd([[
@@ -336,3 +355,10 @@ function Lazygit_toggle()
 end
 
 vim.api.nvim_set_keymap("n", "<leader>lg", "<cmd>lua Lazygit_toggle()<CR>", { noremap = true, silent = true })
+
+-- setup gitsigns
+
+require("gitsigns").setup()
+
+
+

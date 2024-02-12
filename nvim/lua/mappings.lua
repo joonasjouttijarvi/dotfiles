@@ -1,4 +1,5 @@
 --close :x
+
 vim.keymap.set("n", "X", "<cmd>q<CR>")
 -- add to jump list
 vim.keymap.set("n", "k", "v:count > 1 ? 'gk' : 'k'", { expr = true })
@@ -13,16 +14,22 @@ vim.keymap.set("n", "<leader>/", ":noh<CR>", { silent = true, noremap = true })
 -- tabclose with control t
 vim.keymap.set("n", "<C-x>", "<cmd>tabclose<CR>", { silent = true, noremap = true })
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- move lines up and down with control j and k
+vim.keymap.set("n", "<C-j>", ":m .+1<CR>==", { silent = true, noremap = true })
+vim.keymap.set("n", "<C-k>", ":m .-2<CR>==", { silent = true, noremap = true })
+
+-- move lines up and down with alt j and k in visual mode
+vim.keymap.set("v", "<C-J>", ":m '>+1<CR>gv=gv", { silent = true, noremap = true })
+vim.keymap.set("v", "<C-K>", ":m '<-2<CR>gv=gv", { silent = true, noremap = true })
+
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- select all text ggVG
 vim.keymap.set("n", "<leader>aa", "ggVG", { silent = true, noremap = true })
-
+-- esc on terminal mode but not when lazygit is open
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 -- remap for change all instances of word under cursor
-
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
@@ -69,8 +76,7 @@ vim.keymap.set("n", "<leader>gd", ":Gdiffsplit<CR>")
 
 --open terminal window horizontal split on lower half of screen and toggle terminal window
 vim.keymap.set("n", "<leader>th", ":belowright split | resize 15 | terminal<CR>", { silent = true })
--- commands in terminal window
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
 
 -- change working directory to the directory of the open buffer
 vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>")
@@ -109,7 +115,7 @@ vim.keymap.set("n", "<leader>df", ":DiffviewOpen<CR>", { silent = true })
 -- refactor mappings
 
 vim.keymap.set({ "n", "x" }, "<leader>re", function()
-	require("telescope").extensions.refactoring.refactors()
+  require("telescope").extensions.refactoring.refactors()
 end)
 
 -- coderunner mappings
@@ -122,3 +128,21 @@ vim.keymap.set("n", "<leader>zm", ":ZenMode<CR>", { silent = true })
 -- markdown preview
 
 vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { silent = true })
+
+-- git signs
+
+vim.keymap.set("n", "<leader>gh", ":lua require'gitsigns'.blame_line()<CR>", { silent = false })
+vim.keymap.set("n", "<leader>gs", ":Gitsigns toggle_current_line_blame<CR>", { silent = false })
+
+
+-- copilot chat mappings 
+
+vim.keymap.set({"x","n"},"<leader>cc", ":CopilotChatInPlace<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>cl", function()
+  local prompt = vim.fn.input('Enter the required prompt: ')
+  vim.cmd(":CopilotChat "..prompt.."<CR>")
+end, { silent = true })
+
+
+

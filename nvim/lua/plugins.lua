@@ -43,12 +43,18 @@ require("lazy").setup({
 	{ "hrsh7th/cmp-path" },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-nvim-lua" },
-	{ "hrsh7th/vim-vsnip" },
 	{ "saadparwaiz1/cmp_luasnip" },
-	{ "L3MON4D3/LuaSnip" },
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+		},
+	},
 	{ "rafamadriz/friendly-snippets" },
-	{ "hrsh7th/cmp-cmdline" },
-	{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 
 	-- Zenmode
 	{ "folke/zen-mode.nvim" },
@@ -159,7 +165,26 @@ require("lazy").setup({
 		end,
 	},
 	-- Copilot
-	{ "github/copilot.vim" },
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				filetypes = {
+					yaml = false,
+					markdown = false,
+					help = false,
+					gitcommit = false,
+					gitrebase = false,
+					hgcommit = false,
+					svn = false,
+					cvs = false,
+					["."] = false,
+				},
+			})
+		end,
+	},
 
 	--Neoclip
 	{ "AckslD/nvim-neoclip.lua" },
@@ -243,7 +268,34 @@ require("lazy").setup({
 	{ "nvimtools/none-ls.nvim" },
 
 	-- 3rd
-	{ "3rd/image.nvim" },
+	{
+		"3rd/image.nvim",
+		lazy = true,
+	},
+
+	-- onedark theme
+	{ "navarasu/onedark.nvim" },
+
+	-- react snippets
+	{
+		"dsznajder/vscode-es7-javascript-react-snippets",
+		lazy = true,
+	},
+
+	-- gitsigns
+	{ "lewis6991/gitsigns.nvim" },
+
+	-- copilot chat
+	{
+		"jellydn/CopilotChat.nvim",
+		dependencies = { "github/copilot.vim" },
+		opts = {
+			show_help = "no", -- Show help text for CopilotChatInPlace, default: yes
+			debug = false, -- Enable or disable debug mode, the log file will be in ~/.local/state/nvim/CopilotChat.nvim.log
+		},
+		build = function()
+			vim.notify("Please update the remote plugins by running ':UpdateRemotePlugins', then restart Neovim.")
+		end,
+		event = "VeryLazy",
+	},
 })
-
-

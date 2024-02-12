@@ -3,6 +3,7 @@ function Toggle_padding()
 	if vim.wo.foldcolumn == "0" then
 		-- Set padding when foldcolumn is not set
 		vim.wo.foldcolumn = "9"
+
 		vim.wo.signcolumn = "yes:9"
 	else
 		-- Remove padding when foldcolumn is set
